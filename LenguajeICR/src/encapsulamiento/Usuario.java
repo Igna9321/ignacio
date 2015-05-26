@@ -22,8 +22,7 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public int getEdad()throws Exception{
-        if (edad<0)throw new Exception
+    public int getEdad(){
         return edad;
     }
 
