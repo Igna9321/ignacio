@@ -5,8 +5,7 @@
  */
 package abstraccion;
 
-
-/**
+/*
  *
  * @author T-107
  */
@@ -14,37 +13,35 @@ public class Imc {
     private float peso;
     private float altura;
     private boolean flaco;
-     public void setFlaco( boolean flaco){
-     this.flaco=flaco;
-     }
-     public boolean getFlaco(){
-     return flaco;
-     }
-    public void setPeso(float peso){
+    public void setFlaco(boolean flaco){
+        this.flaco=flaco;
+    }
+    public boolean isFlaco(){//get=is para booleano
+        return flaco;
+    }
+    
+    public void setpeso(float peso){ //inicia encapsulamiento
         this.peso=peso;
     }
-    public void setAltura(float altura){
-    this.altura=altura;
+    public void setaltura(float altura){
+        this.altura=altura;
     }
     public float getPeso(){
-    return peso;
+        return peso;
     }
     public float getAltura(){
-    return altura;
+        return altura;
+    }       //termina encapsulamiento
+    public Imc(){   //constructor por defecto
+        
     }
-    public imc(){
-    
-    }
-    
-    public Imc(float p, float a){
-    peso=p;
-    altura=a;
-    
-    }
+  public Imc (float p, float a){
+      peso=p;
+      altura=a;
+   }
     
     public String calcular(){
-        imc=peso/(altura*altura);
+        float imc=peso/(altura*altura);
         return "Tu imc es:"+imc;
     }
-    
 }
