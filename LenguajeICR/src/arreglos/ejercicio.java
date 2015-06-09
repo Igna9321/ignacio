@@ -10,6 +10,7 @@ package arreglos;
  * @author T-107
  */
 public class ejercicio extends javax.swing.JFrame {
+    private Object frase;
 
     /**
      * Creates new form ejercicio
@@ -29,10 +30,10 @@ public class ejercicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        textofrase = new javax.swing.JTextField();
+        frase = new javax.swing.JTextField();
         botontransformar = new javax.swing.JButton();
-        etiquetaderesultado = new javax.swing.JLabel();
-        fraseinsertada = new javax.swing.JLabel();
+        resultado = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jPanel1.setForeground(new java.awt.Color(255, 102, 102));
 
@@ -52,9 +53,9 @@ public class ejercicio extends javax.swing.JFrame {
         jLabel1.setText("Introduce una frase");
         jLabel1.setToolTipText("");
 
-        textofrase.addActionListener(new java.awt.event.ActionListener() {
+        frase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textofraseActionPerformed(evt);
+                fraseActionPerformed(evt);
             }
         });
 
@@ -65,9 +66,14 @@ public class ejercicio extends javax.swing.JFrame {
             }
         });
 
-        etiquetaderesultado.setText("resultado");
+        resultado.setText("resultado");
 
-        fraseinsertada.setText("palabra");
+        jButton1.setText("retransformar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,11 +82,11 @@ public class ejercicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fraseinsertada)
-                    .addComponent(etiquetaderesultado)
+                    .addComponent(jButton1)
+                    .addComponent(resultado)
                     .addComponent(botontransformar)
                     .addComponent(jLabel1)
-                    .addComponent(textofrase, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(frase, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,30 +95,45 @@ public class ejercicio extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textofrase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(frase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botontransformar)
                 .addGap(18, 18, 18)
-                .addComponent(etiquetaderesultado)
+                .addComponent(resultado)
                 .addGap(18, 18, 18)
-                .addComponent(fraseinsertada)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botontransformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botontransformarActionPerformed
-String frase=new String (textofrase.getText());
-//etiquetaderesultado.setText(""+resulta);
+String f= frase.getT
+yte[]arreglo= f.getBytes();
+StringBuilder builder=new StringBuilder();
+for (byte borrego:arreglo){
+    builder.append(borrego);
+}
 
     }//GEN-LAST:event_botontransformarActionPerformed
 
-    private void textofraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textofraseActionPerformed
-for(byte:frase){
-    System.out.println(fraseinsertada.getText());
+    private void fraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fraseActionPerformed
+
 }      
-    }//GEN-LAST:event_textofraseActionPerformed
+    }//GEN-LAST:event_fraseActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String f= frase.getText();
+    byte[]arreglo= f.getBytes();
+    StringBuilder builder=new StringBuilder();
+    for (byte borrego:arreglo){
+        builder.append((char)borrego);
+        buider.append((','));
+}
+String t= builder.toString();
+resultado.setText(builder.toString());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,10 +172,10 @@ for(byte:frase){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botontransformar;
-    private javax.swing.JLabel etiquetaderesultado;
-    private javax.swing.JLabel fraseinsertada;
+    private javax.swing.JTextField frase;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textofrase;
+    private javax.swing.JLabel resultado;
     // End of variables declaration//GEN-END:variables
 }
