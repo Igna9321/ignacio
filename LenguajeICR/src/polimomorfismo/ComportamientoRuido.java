@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package herencia;
+package polimomorfismo;
 
 /**
  *
  * @author Nacho
  */
-public class Aguila extends Animal{
+public interface ComportamientoRuido {
+    
+    public String hacerRuido();
     
 }

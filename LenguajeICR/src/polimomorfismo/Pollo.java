@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package herencia;
+package polimomorfismo;
 
 /**
  *
  * @author Nacho
  */
-public interface ComportamientoRuido {
+public class Pollo extends Animal implements ComportamientoRuido{
+    @Override
+    public String hacerRuido(){
+    return"pio pio"+getNombre();
+    }
     
-    public String hacerRuido();
 }

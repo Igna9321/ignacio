@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package herencia;
+package polimomorfismo;
 
 /**
  *
  * @author Nacho
  */
-public abstract class Delfin extends Animal implements ComportamientoRuido{
+public class Delfin extends Animal implements ComportamientoRuido{
+    
     @Override
     public String hacerRuido(){
-    return "iiipipi";
+    return "iiipipi"+getNombre();
     }
     
 }
