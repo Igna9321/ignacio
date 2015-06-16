@@ -10,7 +10,6 @@ package arreglos;
  * @author T-107
  */
 public class ejercicio extends javax.swing.JFrame {
-    private Object frase;
 
     /**
      * Creates new form ejercicio
@@ -29,7 +28,7 @@ public class ejercicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        j = new javax.swing.JLabel();
         frase = new javax.swing.JTextField();
         botontransformar = new javax.swing.JButton();
         resultado = new javax.swing.JLabel();
@@ -50,8 +49,8 @@ public class ejercicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Introduce una frase");
-        jLabel1.setToolTipText("");
+        j.setText("Introduce una frase");
+        j.setToolTipText("");
 
         frase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +84,7 @@ public class ejercicio extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(resultado)
                     .addComponent(botontransformar)
-                    .addComponent(jLabel1)
+                    .addComponent(j)
                     .addComponent(frase, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
@@ -93,7 +92,7 @@ public class ejercicio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1)
+                .addComponent(j)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(frase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -109,8 +108,9 @@ public class ejercicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botontransformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botontransformarActionPerformed
-String f= frase.getT
-yte[]arreglo= f.getBytes();
+
+        String f= frase String(frase.getText());
+byte[]arreglo= f.getBytes();
 StringBuilder builder=new StringBuilder();
 for (byte borrego:arreglo){
     builder.append(borrego);
@@ -173,8 +173,8 @@ resultado.setText(builder.toString());
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botontransformar;
     private javax.swing.JTextField frase;
+    private javax.swing.JLabel j;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel resultado;
     // End of variables declaration//GEN-END:variables
