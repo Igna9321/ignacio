@@ -7,11 +7,13 @@ package miprimeraexcepcion;
 
 /**
  *
- * @author Nacho
+ * @author T-107
  */
-public class MenordeEdadException extends Exception{
+public class ValidarEdad {
     
-    public MenordeEdadException(){
-        super("Eres un chamaco pervertido, le dire a tu mama!!, no te puedo "+"registrar");
+    public static void validar(int edad)throws MenordeEdadException{
+    if(edad<18)throw new MenordeEdadException();
     }
+    
+    
 }
