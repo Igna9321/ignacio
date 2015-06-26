@@ -15,6 +15,13 @@ public class Antro {
         Direccion d1=new Direccion(55130,"Ecatepunk");
        Usuario u=new Usuario("Juan",42,"jcampos@gail.com",new Direccion(55130,"Ecatepunk"));
         System.out.println(u.getDireccion().getMunicipio());
+        
+        Bebida bebida=new Bebida();
+        bebida.setTipo("alcoholicas");
+        String[]reco=bebida.obtenerRecomendaciones();
+        for (String be:reco){
+            System.out.println("Bebida"+be);
+        }
     }
 
     
