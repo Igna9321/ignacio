@@ -27,4 +27,10 @@ public class GeneradorDeUsuarios {
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+    
+    public String agregarUsuario(String nombre, int edad, String email){
+        Usuario u=new Usuario(nombre, edad, email);
+        usuarios.add(u);
+        return "Usuario agrgado con exito";
+    }
 }

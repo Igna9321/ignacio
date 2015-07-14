@@ -15,6 +15,7 @@ public class ProbarArreglos {
     
     public static void main(String[] args) {
      GeneradorDeUsuarios generadora=new GeneradorDeUsuarios();
+                         generadora.agregarUsuario("Chana",18,"chana@yomera.com");
           ArrayList<Usuario>usuarios=(ArrayList<Usuario>)generadora.getUsuarios();
                           System.out.println(usuarios.size());
           for(Usuario u:usuarios){
