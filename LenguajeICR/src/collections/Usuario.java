@@ -10,7 +10,7 @@ package collections;
  * @author T-107
  */
 public class Usuario {
-    private String nombre;
+    String nombre;
     private Integer edad;
     private String email;
 

@@ -188,7 +188,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_textoEdadActionPerformed
 
     private void botonCargarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarUsuariosActionPerformed
-        // TODO add your handling code here:
+       int indice=comboSeleccion.getSelectedIndex();
         GeneradorDeUsuarios gen=new GeneradorDeUsuarios();
         List<Usuario>usuarios=gen.getUsuarios();
         Collections.sort(usuarios, new UsuarioPorEdad());
@@ -196,12 +196,23 @@ public class InterfazUsuarios extends javax.swing.JFrame {
                 TablaUsuario.setModel(new DefaultTableModel(new String[]{"Nombre","Edad","Email"},gen.getUsuarios().size()));
         
         int fila=0;
+         if (indice==1){
+             for(Usuario u:usuarios){
+            TablaUsuario.setValueAt(u.nombre, fila, 0);
+            TablaUsuario.setValueAt(u.getEdad(), fila, 1);
+            TablaUsuario.setValueAt(u.getEmail(), fila, 2);
+            fila++;
+        }  
+        }else if(indice==0){
+            Collections.sort(usuarios, new UsuarioPorNombre());
+        TablaUsuario.setModel(new DefaultTableModel(new String[]{"Nombre","Edad","Email"}, gen.getUsuarios().size()));
         for(Usuario u:usuarios){
             TablaUsuario.setValueAt(u.getNombre(), fila, 0);
             TablaUsuario.setValueAt(u.getEdad(), fila, 1);
             TablaUsuario.setValueAt(u.getEmail(), fila, 2);
             fila++;
-        }
+        }}
+         
     }//GEN-LAST:event_botonCargarUsuariosActionPerformed
 
     private void comboSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSeleccionActionPerformed
