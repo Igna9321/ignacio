@@ -11,29 +11,32 @@ import java.util.Calendar;
  *
  * @author T-107
  */
-public class Ejercicio extends javax.swing.JFrame {
-
+public class ContraReloj extends javax.swing.JFrame {
+        int x=300;
+        int y=200;
     /**
-     * Creates new form Ejercicio
+     * Creates new form ContraReloj
      */
-    public Ejercicio() {
+    public ContraReloj() {
         initComponents();
-    
-       Thread t1=new Thread(new Runnable(){
+        jLabel1.setText("Hola");
+        Thread t1=new Thread(new Runnable(){
 
             @Override
             public void run(){
                 while(true){
         try{
             Thread.sleep(1000);
+            setSize(x,y);
             //vamos a crear un reloj chafa
             Calendar cal=Calendar.getInstance();
             int hora=cal.get(Calendar.HOUR);
             int minutos=cal.get(Calendar.MINUTE);
             int segundos=cal.get(Calendar.SECOND);
             jLabel1.setText(hora+":"+minutos+":"+segundos);
-        
-        
+            //if(minutos==58)dispose();
+            x=x+5;
+            y=y+5;
         }catch(Exception e){
          }
         }
@@ -56,6 +59,7 @@ public class Ejercicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Ravie", 1, 18)); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -63,16 +67,16 @@ public class Ejercicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel1)
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+                .addGap(130, 130, 130)
                 .addComponent(jLabel1)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         pack();
@@ -95,20 +99,20 @@ public class Ejercicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ejercicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ejercicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ejercicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ejercicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ejercicio().setVisible(true);
+                new ContraReloj().setVisible(true);
             }
         });
     }
